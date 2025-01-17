@@ -1,0 +1,16 @@
+[package]
+name = "securerand-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Randomness
+rand = "0.8.5"
+rand_chacha = "0.3.1"
+getrandom = "0.2.15"
+
+# BIP39
+tiny-bip39 = "2.0.0"
+
+# Password Key Deriviation
+argon2 = "0.5.3"
