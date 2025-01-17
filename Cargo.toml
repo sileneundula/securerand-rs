@@ -1,5 +1,16 @@
 [package]
 name = "securerand-rs"
+authors = ["silene0259"]
+description = "A Rand Library For Deriving Randomness From Secure Sources With A Simple Interface"
+keywords = ["crypto","cryptography","encryption","rand","password"]
+categories = ["cryptography"]
+readme = "README.md"
+license = "Apache-2.0 OR MIT"
+homepage = "https://github.com/Silene0259/securerand-rs"
+repository = "https://github.com/Silene0259/securerand-rs"
+
+
+
 version = "0.1.0"
 edition = "2021"
 
