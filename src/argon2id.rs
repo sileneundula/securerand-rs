@@ -9,7 +9,7 @@ use argon2::{
 pub struct FuscsinePasswordDerive;
 
 impl FuscsinePasswordDerive {
-    pub fn new(password: &str) -> [u8;64] {
+    pub fn new(password: &str) -> [u8;32] {
         // Generate Salt From OSRNG
         let salt = SaltString::generate(&mut OsRng);
         
@@ -21,7 +21,7 @@ impl FuscsinePasswordDerive {
 
 
         // Output Material
-        let mut output: [u8;64] = [0u8; 64];
+        let mut output: [u8;32] = [0u8; 32];
 
         // Argon2
         Argon2::default().hash_password_into(password.as_bytes(), salt.as_salt().as_str().as_bytes(), &mut output).unwrap();

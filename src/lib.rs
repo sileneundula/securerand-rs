@@ -9,3 +9,7 @@ pub mod argon2id;
 
 /// Verifiable Random Function
 pub mod vrf;
+
+pub mod securerand;
+
+pub mod errors;
