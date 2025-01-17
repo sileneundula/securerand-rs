@@ -24,4 +24,15 @@ impl SecureRandom {
         let csprng = FuschineCSPRNG::from_seed_32(seed);
         return csprng
     }
+    /// Derives From Password Using A Static Salt; Will Always Return The Same Randomness (Determeninistic)
+    pub fn derive_from_password(pass: &str) -> [u8;32] {
+        let seed = FuscsinePasswordDerive::new_with_static_salt(pass);
+        let csprng = FuschineCSPRNG::from_seed_32(seed);
+        return csprng
+    }
+    pub fn derive_from_password_and_salt(pass: &str, salt: &str) -> [u8;32] {
+        let seed = FuscsinePasswordDerive::new_with_salt(pass, salt);
+        let csprng = FuschineCSPRNG::from_seed_32(seed);
+        return csprng
+    }
 }

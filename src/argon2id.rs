@@ -28,4 +28,18 @@ impl FuscsinePasswordDerive {
 
         return output
     }
+    pub fn new_with_salt(password: &str, salt: &str) -> [u8;32] {
+        let mut output: [u8;32] = [0u8; 32];
+        Argon2::default().hash_password_into(password.as_bytes(), salt.as_bytes(), &mut output).unwrap();
+
+        return output
+    }
+    pub fn new_with_static_salt(password: &str) -> [u8;32] {
+        let salt: &str = "SecureRandStaticSaltv1";
+        let mut output: [u8;32] = [0u8;32];
+
+        Argon2::default().hash_password_into(password.as_bytes(), salt.as_bytes(), &mut output).unwrap();
+
+        return output
+    }
 }
